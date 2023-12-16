@@ -6,6 +6,7 @@ var gameStart = false;
 
 $(document).keypress(function(){
     if (gameStart === false){
+        clearUserInput()
         $("#level-title").text("Level " + level);
         nextSequence();
         gameStart = true;
@@ -74,6 +75,10 @@ function checkAnswer(){
 function restartGame(){
     gameStart = false;
     level = 0;
+    clearUserInput()
+}
+
+function clearUserInput(){
     userClickedPattern = []
     gamePattern = [];
 }
